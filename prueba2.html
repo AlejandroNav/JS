@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+
+        Pagina de ejemplo de JavaScript
+
+        <p id="demo"></p>
+<br>
+        <button onclick="myFunction()">Try it</button>
+  <script>
+    // Your JavaScript goes here!
+    console.log("Hello, World!")
+    let i = 0;
+while (i < 3) { // shows 0, then 1, then 2 etc
+  alert( i+1 ); // orque las matrices se empiezan en cero
+  i++;
+}
+
+let sum = 0;
+
+while (true) {
+  let value = +prompt("Enter a number", '');
+  if (!value) break; // (*)
+  sum += value;
+}
+alert( 'Sum: ' + sum );
+
+function showPrimes(n) {
+  nextPrime: for (let i = 2; i < n; i++) {
+
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue nextPrime;
+    }
+    console.log(i)
+  }
+}
+showPrimes(30)
+
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(7,13);
+document.getElementById("demo").innerHTML = res; 
+
+function myFunction() {
+  var str = "     Hello World!     ";
+  alert(str.trim());
+}
+
+  </script>
+</body>
+</html>

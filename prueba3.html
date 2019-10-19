@@ -2,6 +2,19 @@
 <html>
 <head>
   <title>Page Title</title>
+
+  <style>
+    h1 {color:red;}
+    p {color:blue;}
+
+    .msgBox p { padding-left: 82px;
+background-position: 25px center;
+background-repeat: no-repeat;
+
+background-color: aquamarine
+width: 242px;}
+    </style>
+    
 </head>
 <body>
 
@@ -11,8 +24,14 @@
 <br>
         <button onclick="myFunction()">Try it</button>
   <script>
-    // Your JavaScript goes here!
-    function displayMessage() {
+      
+    var btn = document.querySelector('button');
+    btn.onclick = function() {
+    displayMessage('Woo, this is a different message!');
+    displayMessage('Brian: Hi there, how are you today?','chat');
+    };
+
+    function displayMessage(msgText, msgType) {
         var html = document.querySelector('html');
 
         var panel = document.createElement('div');
@@ -20,18 +39,27 @@
         html.appendChild(panel);
 
         var msg = document.createElement('p');
-        msg.textContent = 'This is a message box';
+        msg.textContent =  msgText;
         panel.appendChild(msg);
 
         var closeBtn = document.createElement('button');
-        closeBtn.textContent = 'x';
+        closeBtn.textContent = 'Twxto interno del boton';
         panel.appendChild(closeBtn);
 
         closeBtn.onclick = function() {
-        panel.parentNode.removeChild(panel);
+            panel.parentNode.removeChild(panel);
         }
-}
-displayMessage();
-  </script>
+            if (msgType === 'warning') {
+            msg.style.backgroundImage = 'url(icons/warning.png)';
+            panel.style.backgroundColor = 'red';
+            } else if (msgType === 'chat') {
+            msg.style.backgroundImage = 'url(icons/chat.png)';
+            panel.style.backgroundColor = aquamarine;
+            } else {
+            msg.style.paddingLeft = '20px';
+            }
+        }
+
+</script>
 </body>
 </html>

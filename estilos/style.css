@@ -11,8 +11,11 @@ body {
 code {
     background: white;
 }
-a {border-bottom: 1px solid #444444; 
+a {
+    border-bottom: 1px solid #444444; 
     color: #444444; 
     text-decoration: none;
 }
-a:hover {border-bottom: 0;}
+a:hover {
+    border-bottom: 0;
+}

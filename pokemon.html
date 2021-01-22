@@ -9,72 +9,84 @@
 </head>
 
 <body>
-    
-<main>
-    <h1>Pokemon</h1>
-    <div class="instructions">
-        <p>Choose your hero</p>
-      </div>
-      
-      <section class="characters"></section>
-      
-      <section class="stadium">
-        <section class="enemy"></section>
-        <section class="hero"></section>
-      </section>
-      
-      
-      <ul class="attack-list"></ul>
+
+    <main>
+        <h1>Pokemon</h1>
+        <div class="instructions">
+            <p>Choose your hero</p>
+        </div>
+
+        <section class="characters"></section>
+
+        <section class="stadium">
+            <section class="enemy"></section>
+            <section class="hero"></section>
+        </section>
+
+
+        <ul class="attack-list"></ul>
 
     </main>
-    
-
 
     <script>
- console.log("hola1")
-    function pokemon(name, hp, special, physical) {
-    this.name = name;
-    this.hp = hp;
-    this.special = special;
-    this.physical = physical;
-    }
-    console.log("hola2")
 
-    var pokeChoice = {
-    Charizard: new pokemon("Charizard", 90, 30, 15),
-    Blastoise: new pokemon("Blastoise", 95, 28, 14),
-    Venasaur: new pokemon("Venasaur", 100, 26, 13),
-    Chikorita: new pokemon("Chikoritaa", 50, 13, 6),
-    Machamp: new pokemon("Machamp ", 80, 10, 30)
-    }
-
-    function trainer(isComputer, name, pokemon) {
-    this.isComputer = isComputer;
-    this.name = name;
-    this.pokemon = pokemon;
-}
-//     player.prototype.attack = function() {
-//     var uhigh = this.pokemon.special
-//     var ulow = this.physical
-//     return Math.round(Math.random());
-// }
-
-function gen(){
-            let r=Math.round(Math.random()*100);
-            return r;
-
+        function Pokemon(name, hp, special, physical) {
+            this.name = name;
+            this.hp = hp;
+            this.special = special;
+            this.physical = physical;
         }
 
-        console.log("hola3" + gen())
+        var pokeChoice = {
+            charizard: new Pokemon("Charizard", 90, 30, 15),
+            blastoise: new Pokemon("Blastoise", 95, 28, 14),
+            venasaur: new Pokemon("Venasaur", 100, 26, 13),
+            chikorita: new Pokemon("Chikoritaa", 50, 13, 6),
+            machamp: new Pokemon("Machamp ", 80, 10, 30)
+        }
 
-function attack2(){
+        function Trainer(isComputer, name, pokemon) {
+            this.isComputer = isComputer;
+            this.name = name;
+            this.pokemon = pokemon;
+        }
 
-    var base = Charizard.physical;
-    return base*2;
+        function gen() {
+            let r = Math.random();
+            return 1 + r
+        }
 
-}
+        function criticals() {
+            let roll = gen();
+            if (roll > 1.85) {
+                return true
+            } else {
+                return false
+            }
+        }
 
-console.log(attack2)
+        Trainer.prototype.attack = function (x) {
+            if (x) {
+                var base = this.pokemon.physical;
+            } else {
+                var base = this.pokemon.special;
+            }
+            if (criticals()) {
+                return base * 3;
+            } else {
+                return base * gen();
+            }
+        }
+
+
+        let webUser = new Trainer(false, " Alejandro ", pokeChoice.charizard)
+        let bot = new Trainer(true, " Rival ", pokeChoice.machamp)
+   
+        console.log(webUser.pokemon.name)
+        console.log(webUser.attack(false))
+        console.log(bot.pokemon.name)
+        console.log(bot.attack(true))
+
 
 
 

@@ -31,8 +31,20 @@
 
 
     <script>
+    function pokemon(name, hp, special, physical) {
+    this.name = name;
+    this.hp = hp;
+    this.special = special;
+    this.physical = physical;
+    }
 
-
+    var pokeChoice = {
+    Charizard: new pokemon("Charizard", 90, 30, 15),
+    Blastoise: new pokemon("Blastoise", 95, 28, 14),
+    Venasaur: new pokemon("Venasaur", 100, 26, 13),
+    Chikorita: new pokemon("Chikoritaa", 50, 13, 6),
+    Machamp: new pokemon("Machamp ", 80, 10, 30)
+    };
 
 
 

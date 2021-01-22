@@ -31,12 +31,14 @@
 
 
     <script>
+ console.log("hola1")
     function pokemon(name, hp, special, physical) {
     this.name = name;
     this.hp = hp;
     this.special = special;
     this.physical = physical;
     }
+    console.log("hola2")
 
     var pokeChoice = {
     Charizard: new pokemon("Charizard", 90, 30, 15),
@@ -44,7 +46,35 @@
     Venasaur: new pokemon("Venasaur", 100, 26, 13),
     Chikorita: new pokemon("Chikoritaa", 50, 13, 6),
     Machamp: new pokemon("Machamp ", 80, 10, 30)
-    };
+    }
+
+    function trainer(isComputer, name, pokemon) {
+    this.isComputer = isComputer;
+    this.name = name;
+    this.pokemon = pokemon;
+}
+//     player.prototype.attack = function() {
+//     var uhigh = this.pokemon.special
+//     var ulow = this.physical
+//     return Math.round(Math.random());
+// }
+
+function gen(){
+            let r=Math.round(Math.random()*100);
+            return r;
+
+        }
+
+        console.log("hola3" + gen())
+
+function attack2(){
+
+    var base = Charizard.physical;
+    return base*2;
+
+}
+
+console.log(attack2)
 
 
 

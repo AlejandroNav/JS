@@ -11,16 +11,33 @@
 <body>
 
     <main>
-        <h1>Pokemon</h1>
+        <h1>Pkr</h1>
         <div class="instructions">
             <p>Choose your hero</p>
         </div>
 
-        <section class="characters"></section>
-
-        <section class="stadium">
-            <section class="enemy"></section>
-            <section class="hero"></section>
+        <section class="tabla">
+            <table>
+                <tr>
+                    <td id="hp1" ></td>
+                    <td id="hp2" ></td>
+                </tr>
+                <tr>
+                    <td id="pk1" ></td>
+                    <td id="pk2" ></td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="butt" value="">
+                        <input type="button" class="butt" value="">
+                        <input type="button" class="butt" value="">
+                        <input type="button" class="butt" value="">
+                    </td>
+                </tr>
+            </table>
         </section>
 
 
@@ -30,11 +47,12 @@
 
     <script>
 
-        function Pokemon(name, hp, special, physical) {
+        function Pokemon(name, hp, special, physical,moves) {
             this.name = name;
             this.hp = hp;
             this.special = special;
             this.physical = physical;
+            this.moves = moves;
         }
 
         var pokeChoice = {
@@ -81,7 +99,7 @@
 
         let webUser = new Trainer(false, " Alejandro ", pokeChoice.charizard)
         let bot = new Trainer(true, " Rival ", pokeChoice.machamp)
-   
+
         console.log(webUser.pokemon.name)
         console.log(webUser.attack(false))
         console.log(bot.pokemon.name)

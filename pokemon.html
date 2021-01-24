@@ -19,12 +19,12 @@
         <section class="tabla">
             <table>
                 <tr>
-                    <td id="hp1" ></td>
-                    <td id="hp2" ></td>
+                    <td id="hp1"></td>
+                    <td id="hp2"></td>
                 </tr>
                 <tr>
-                    <td id="pk1" ></td>
-                    <td id="pk2" ></td>
+                    <td id="pk1"></td>
+                    <td id="pk2"></td>
                 </tr>
                 <tr>
                     <td colspan="2"></td>
@@ -47,7 +47,7 @@
 
     <script>
 
-        function Pokemon(name, hp, special, physical,moves) {
+        function Pokemon(name, hp, special, physical, moves) {
             this.name = name;
             this.hp = hp;
             this.special = special;
@@ -97,17 +97,22 @@
         }
 
 
-        let webUser = new Trainer(false, " Alejandro ", pokeChoice.charizard)
+        let webUser = new Trainer(false, " Alex ", pokeChoice.charizard)
         let bot = new Trainer(true, " Rival ", pokeChoice.machamp)
 
-        console.log(webUser.pokemon.name)
-        console.log(webUser.attack(false))
-        console.log(bot.pokemon.name)
-        console.log(bot.attack(true))
+        let p1roll = webUser.attack(false);
+        let p2roll = bot.attack(true);
 
+        console.log(webUser.pokemon.name);
+        console.log(p1roll);
+        console.log(bot.pokemon.name);
+        console.log(p2roll);
 
-
-
+        if (p1roll >= p2roll) {
+            console.log( webUser.pokemon.name + " wins for " + webUser.name)
+        } else {
+            console.log( bot.pokemon.name + " wins for " + bot.name)
+        }
 
     </script>
 </body>

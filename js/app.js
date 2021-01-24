@@ -38,5 +38,8 @@ console.log(sumaDos(gen(), gen()))
 
 let isGameOpen = true;
 
-let userin = prompt("dame un numerio 2");
+let userin = prompt("dame un numerio ");
 
+if (userin ==7){
+    console.log("Eres un suertudo")
+}

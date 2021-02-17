@@ -41,10 +41,10 @@ function getComputerSelection() {
 function playRound(playerSelection, computerSelection) {
     let log = '';
     if (playerSelection === 'Rock') {
-        if (computerSelection  === 'Rock') {
+        if (computerSelection === 'Rock') {
             log = 'Computer Rock ties your Rock';
         }
-        else if (computerSelection  === 'Paper') {
+        else if (computerSelection === 'Paper') {
             log = 'Computer Paper slays your Rock';
         }
         else {
@@ -53,25 +53,30 @@ function playRound(playerSelection, computerSelection) {
 
     }
     else if (playerSelection === 'Paper') {
-        if (computerSelection  === 'Rock') {
+        if (computerSelection === 'Rock') {
+            log = 'Computer Rock is deafeated your Paper';
 
         }
-        else if (computerSelection  === 'Rock') {
+        else if (computerSelection === 'Paper') {
+            log = 'Computer Paper ties your Paper';
 
         }
         else {
-
+            log = 'Computer Scissors slay your Paper';
         }
+
     }
     else if (playerSelection === 'Scissors') {
-        if (computerSelection  === 'Rock') {
+        if (computerSelection === 'Rock') {
+            log = 'Computer Rock breaks your Scissors';
 
         }
-        else if (computerSelection  === 'Rock') {
+        else if (computerSelection === 'Paper') {
+            log = 'Computer Paper is rekt by your Scissors';
 
         }
         else {
-
+            log = 'Computer Scissors ties your Scissors';
         }
     }
 
@@ -80,3 +85,47 @@ function playRound(playerSelection, computerSelection) {
 
     return log;
 }
+
+function createParagWithText(text) {
+    const p = document.createElement('p');
+    p.textContent = text;
+
+    return p;
+}
+
+function game(playerSelect) {
+    let playerSelection = capitalize(playerSelect);
+    let computerSelection = getComputerSelection();
+
+    let roundResult = playRound(playerSelection, computerSelection);
+
+    if (roundResult.search('You Win!') > -1) {
+        playerScore++;
+    } else if (roundResult.search('You Lose!') > -1) {
+        computerScore++;
+    }
+
+    scorePlayer.textContent = playerScore;
+    scoreComputer.textContent = computerScore;
+    message.textContent = roundResult;
+    selectionPlayer.appendChild(createParagWithText(playerSelection));
+    selectionComputer.appendChild(createParagWithText(computerSelection));
+
+    if (playerScore >= 5 && computerScore < 5) {
+        message.textContent = 'Game Over. You Win!';
+    } else if (playerScore < 5 && computerScore >= 5) {
+        message.textContent = 'Game Over. You Lose!';
+    }
+}
+/* Helper Functions */
+function random(number) {
+    return Math.floor(Math.random() * number + 1);
+  }
+  
+  function capitalize(string) {
+    return (
+      string.toLowerCase().charAt(0).toUpperCase() + string.toLowerCase().slice(1)
+    );
+  }
+  /* ************************ */
+  © 2021 GitHub, Inc.

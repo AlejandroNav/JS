@@ -1,21 +1,72 @@
-html{
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html {
     background-color: #4ce8ff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-main{
+
+main {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 55%;
-    text-align: center; 
-    background-color: #F9A4ED    ; 
+    text-align: center;
+    background-color: #F9A4ED;
     color: #8536D6;
     max-width: 900px;
 }
-.titulo{
+
+.titulo {
     padding: 20px 15px;
 }
-.centroimg{
+
+.centroimg {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -23,99 +74,101 @@ main{
     text-align: center;
     max-width: 400px;
 }
-.copyright{
+
+.copyright {
     text-align: right;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background-color: var(--main-color);
-  }
-  
-  .heading {
+}
+
+.heading {
     margin: 50px 0;
     text-align: center;
     color: var(--color-sub);
     font-size: 55px;
     font-weight: 400;
-  }
-  
-  .container {
+}
+
+.container {
     max-width: 900px;
     margin: 0 auto;
     padding: 10px;
     width: 50%;
     margin-bottom: 100px;
-  }
-  
-  .d-flex {
+}
+
+.d-flex {
     display: flex;
     justify-content: space-around;
-  }
-  
-  .card {
+}
+
+.card {
     text-align: center;
-  }
-  
-  .card-image {
+}
+
+.card-image {
     margin-bottom: 10px;
     cursor: pointer;
     position: relative;
     max-width: 70px;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .card-image:hover {
+}
+
+.card-image:hover {
     top: -5px;
-  }
-  
-  .card-text {
+}
+
+.card-text {
     text-transform: capitalize;
     font-weight: 700;
     font-size: 25px;
     color: #8536D6;
-  }
-  
-  .score {
+}
+
+.score {
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
     font-size: 55px;
     color: #824ab9;
     font-weight: 700;
-  }
-  
-  .message {
+}
+
+.message {
     text-align: center;
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 20px;
-  }
-  
-  .dashboard {
+}
+
+.dashboard {
     margin-top: 50px;
     display: flex;
     justify-content: center;
     color: rgb(0, 162, 255);
-  }
-  
-  .dashboard-side {
+}
+
+.dashboard-side {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0px 20px;
     margin-bottom: 60px;
-  }
-  
-  .headindg-sub {
+}
+
+.headindg-sub {
     font-size: 35px;
     font-weight: 500;
     margin-bottom: 10px;
-  }
-  
-  p {
+}
+
+p {
     margin-bottom: 10px;
     font-size: 20px;
     font-weight: 400;
-  }
+}

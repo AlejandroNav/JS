@@ -42,13 +42,13 @@ function playRound(playerSelection, computerSelection) {
     let log = '';
     if (playerSelection === 'Rock') {
         if (computerSelection  === 'Rock') {
-
+            log = 'Computer Rock ties your Rock';
         }
-        else if (computerSelection  === 'Rock') {
-
+        else if (computerSelection  === 'Paper') {
+            log = 'Computer Paper slays your Rock';
         }
         else {
-
+            log = 'Computer Scissors are destroyed by your Rock';
         }
 
     }

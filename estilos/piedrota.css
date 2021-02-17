@@ -1,0 +1,23 @@
+html{
+    background-color: #4ce8ff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center; 
+    background-color: #F9A4ED    ; 
+    color: #8536D6;
+}
+.centroimg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+.copyright{
+    text-align: right;
+}

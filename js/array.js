@@ -15,4 +15,6 @@ cars.shift();
 document.getElementById("demo2").innerHTML = cars;
 // unshift adds to the start
 cars.unshift("HOLA");
+cars.unshift("HOLA1");
+cars.unshift("Cosita");
 document.getElementById("demo3").innerHTML = cars;

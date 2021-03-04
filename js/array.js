@@ -18,3 +18,12 @@ cars.unshift("HOLA");
 cars.unshift("HOLA1");
 cars.unshift("Cosita");
 document.getElementById("demo3").innerHTML = cars;
+
+let reddiCom = {
+    user: "Esternocleido",
+    arrivotos: 23,
+    bajivotos:44 ,
+    score:545 ,
+    tags: ["Hilarius","funny","mexican"]
+}
+

@@ -22,8 +22,12 @@ document.getElementById("demo3").innerHTML = cars;
 let reddiCom = {
     user: "Esternocleido",
     arrivotos: 23,
-    bajivotos:44 ,
-    score:545 ,
-    tags: ["Hilarius","funny","mexican"]
+    bajivotos: 44,
+    score: 545,
+    tags: ["Hilarius", "funny", "mexican"]
 }
+console.log("Hsdfasdgfaerg")
+for (let index = 0; index <= 10; index++) {
+    console.log("hola" + index)
 
+}

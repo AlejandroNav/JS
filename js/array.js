@@ -63,9 +63,11 @@ const target = Math.floor(Math.random() * dificultad) + 1;
 console.log(target)
 
 let mensajito = parseInt(prompt("Dame el primer guess "));
+let intentos = 1;
 
 
 while (true) {
+    intentos++;
 
     if (mensajito === target) {
         break;
@@ -78,4 +80,4 @@ while (true) {
         }
     }
 }
-console.log(" Escogiste el verdadero " + target)
+console.log(" Escogiste el verdadero " + target + ` en ${intentos} intentos`);

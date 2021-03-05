@@ -67,7 +67,7 @@ let intentos = 1;
 
 
 while (true) {
-    intentos++;
+    
 
     if (mensajito === target) {
         break;
@@ -79,5 +79,7 @@ while (true) {
             mensajito = parseInt(prompt(" Dame otro numero " + mensajito + "  es muy bajo"));
         }
     }
+    intentos++;
+
 }
 console.log(" Escogiste el verdadero " + target + ` en ${intentos} intentos`);

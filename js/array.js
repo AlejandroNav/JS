@@ -49,7 +49,6 @@ for (let indexy = 0; indexy < cars.length; indexy++) {
     console.log(indexy + "  " + cars[indexy].toUpperCase());
     for (let index = 0; index < cars.length; index++) {
         console.log(indexy + "  " + index + "  " + cars[index].toUpperCase());
-
     }
 }
 
@@ -94,22 +93,25 @@ while (inpu !== 'quit' && inpu !== 'q') {
         console.log(" ****")
         for (let index = 0; index < todos.length; index++) {
             console.log(`${index + 1}: ${todos[index]} `);
-
         }
-
     } else if (inpu === 'new') {
         const newTodo = prompt("Dame tu nueva tarea ");
         todos.push(newTodo);
         console.log(` ${newTodo} agragado a la lista `);
-
     } else if (inpu === 'delete') {
         const borra = prompt("Ok da el index a borrar");
         todos.splice(borra, 1);
         console.log(` ${borra} indice ha sido borrado `);
-
     }
 
 }
 
-console.log(" saliste de la aopp ")
+console.log(" saliste de la app ")
 console.log(" ")
+
+function diceRoll (caras) {
+
+    return Math.floor(Math.random()*caras)
+    
+}
+console.log(diceRoll(1000));

@@ -83,3 +83,27 @@ while (true) {
 
 }
 console.log(" Escogiste el verdadero " + target + ` en ${intentos} intentos`);
+
+let inpu = prompt("que te gustaria hacer?")
+
+const todos = ['colecciona huevos','limpiar banio']
+
+while (inpu !=='quit' && inpu !=='q') {
+    inpu = prompt("que te gustaria hacer?") 
+    if (inpu ==='list') {
+        console.log(" ****")
+        for (let index = 0; index < todos.length; index++) {
+            console.log(`${index+1}: ${todos[index]} `);
+            
+        }
+        
+    } else if (inpu ==='new') {
+        const newTodo = prompt("Dame tu nueva tarea ")
+        todos.push(newTodo);
+        console.log(` ${newTodo} agragado a la lista `)
+        
+    }
+    
+}
+console.log(" saliste de la aopp ")
+console.log(" ")

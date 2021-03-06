@@ -115,3 +115,11 @@ function diceRoll (caras) {
     
 }
 console.log(diceRoll(1000));
+
+function rant (message) {
+
+    var str = message;
+    let res = [str.toUpperCase(),str.toUpperCase(),str.toUpperCase()];
+    return res;
+}
+console.log(rant("woop"));

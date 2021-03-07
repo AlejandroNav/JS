@@ -110,7 +110,6 @@ console.log(" saliste de la app ")
 console.log(" ")
 
 function diceRoll (caras) {
-
     return Math.floor(Math.random()*caras)
     
 }
@@ -123,3 +122,9 @@ function rant (message) {
     return res;
 }
 console.log(rant("woop"));
+
+
+function add(x,y) {
+    return x+y;
+}
+console.log(add(10,100))

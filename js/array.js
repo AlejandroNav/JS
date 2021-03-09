@@ -128,3 +128,16 @@ function add(x,y) {
     return x+y;
 }
 console.log(add(10,100))
+const numeros = [3,5,76,2,45,5,32,2,4,5]
+
+
+
+numeros.forEach(function (elem){
+    console.log(elem)
+})
+
+const tenTimes = numeros.map(function (elem){
+    return elem *10;
+})
+
+console.log(tenTimes)

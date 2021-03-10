@@ -156,3 +156,20 @@ const id = setInterval(
     () => {console.log(Math.random())},1400
 )
 clearInterval(id)
+
+
+numeros.filter(n =>
+    {
+        return n>5
+    })
+
+// function dado(numeros){
+//     if (numeros===undefined) {
+//         numeros = 6
+//     }
+//     return Math.floor(Math.random()*numeros) + 1
+// }
+
+function dado(numeros = 6){
+    return Math.floor(Math.random()*numeros) + 1
+}

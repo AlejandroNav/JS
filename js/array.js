@@ -153,15 +153,14 @@ setTimeout(() => {
 }, 3000)
 
 const id = setInterval(
-    () => {console.log(Math.random())},1400
+    () => { console.log(Math.random()) }, 1400
 )
 clearInterval(id)
 
 
-numeros.filter(n =>
-    {
-        return n>5
-    })
+numeros.filter(n => {
+    return n > 5
+})
 
 // function dado(numeros){
 //     if (numeros===undefined) {
@@ -170,6 +169,22 @@ numeros.filter(n =>
 //     return Math.floor(Math.random()*numeros) + 1
 // }
 
-function dado(numeros = 6){
-    return Math.floor(Math.random()*numeros) + 1
+function dado(numeros = 6) {
+    return Math.floor(Math.random() * numeros) + 1
 }
+
+const usuario = {
+    email: 'aleju@gmail.com',
+    pass: '12345',
+    first: 'Alejandro',
+    last: 'Nava',
+    born: 1992,
+    deid: 2090,
+    cita: 'CDMX'
+}
+
+const firstName = usuario.first;
+
+const { email } = usuario;
+
+console.log(firstName + " su correo es: " + email)

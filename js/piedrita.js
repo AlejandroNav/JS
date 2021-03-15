@@ -120,12 +120,12 @@ function game(playerSelect) {
 /* Helper Functions */
 function random(number) {
     return Math.floor(Math.random() * number + 1);
-  }
-  
-  function capitalize(string) {
+}
+
+function capitalize(string) {
     return (
-      string.toLowerCase().charAt(0).toUpperCase() + string.toLowerCase().slice(1)
+        string.toLowerCase().charAt(0).toUpperCase() + string.toLowerCase().slice(1)
     );
-  }
-  /* ************************ */
-  © 2021 GitHub, Inc.
+}
+/* ************************ */
+© 2021 GitHub, Inc.

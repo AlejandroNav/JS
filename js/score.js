@@ -26,8 +26,10 @@ jugador1.addEventListener('click', function () {
         marcador1 += 1;
         if (marcador1 === limite) {
             isTerminado = true;
-            mostar1.classList.add('winner')
-            mostar2.classList.add('loser')
+            mostar1.classList.add('has-text-success')
+            mostar2.classList.add('has-text-danger')
+            jugador2.disabled = true;
+            jugador1.disabled = true;
         }
         mostar1.textContent = marcador1;
     }
@@ -38,8 +40,10 @@ jugador2.addEventListener('click', function () {
         marcador2 += 1;
         if (marcador2 === limite) {
             isTerminado = true;
-            mostar2.classList.add('winner')
-            mostar1.classList.add('loser')
+            mostar2.classList.add('has-text-success')
+            mostar1.classList.add('has-text-danger')
+            mostar1.disabled = true;
+            mostar2.disabled = true;
         }
         mostar2.textContent = marcador2
     }
@@ -52,7 +56,9 @@ function resetF() {
     mostar1.textContent = marcador1;
     mostar2.textContent = marcador2;
     isTerminado = false;
-    mostar2.classList.remove('winner','loser')
-    mostar1.classList.remove('loser','winner')
+    mostar2.classList.remove('has-text-success','has-text-danger')
+    mostar1.classList.remove('has-text-danger','has-text-success')
+    jugador2.disabled = false;
+    jugador1.disabled = false;
 
 }

@@ -7,21 +7,12 @@ const selectionComputer = document.querySelector('.computer-selection');
 let playerScore = 0;
 let computerScore = 0;
 
-// Start Game when user clicks on an image
-images.forEach((image) =>
-    image.addEventListener('click', () => {
-        if (playerScore >= 5 || computerScore >= 5) {
-            return;
-        }
-        game(image.dataset.image);
-    })
-);
-/* Game Logic */
+
+
 
 function getComputerSelection() {
     let computerNumber = random(3);
     let computerGuess = '';
-
     switch (computerNumber) {
         case 1:
             computerGuess = 'Rock';
@@ -50,82 +41,33 @@ function playRound(playerSelection, computerSelection) {
         else {
             log = 'Computer Scissors are destroyed by your Rock';
         }
-
     }
     else if (playerSelection === 'Paper') {
         if (computerSelection === 'Rock') {
             log = 'Computer Rock is deafeated your Paper';
-
         }
         else if (computerSelection === 'Paper') {
             log = 'Computer Paper ties your Paper';
-
         }
         else {
             log = 'Computer Scissors slay your Paper';
         }
-
     }
     else if (playerSelection === 'Scissors') {
         if (computerSelection === 'Rock') {
             log = 'Computer Rock breaks your Scissors';
-
         }
         else if (computerSelection === 'Paper') {
             log = 'Computer Paper is rekt by your Scissors';
-
         }
         else {
             log = 'Computer Scissors ties your Scissors';
         }
     }
-
-
-
-
     return log;
 }
 
-function createParagWithText(text) {
-    const p = document.createElement('p');
-    p.textContent = text;
-
-    return p;
-}
-
-function game(playerSelect) {
-    let playerSelection = capitalize(playerSelect);
-    let computerSelection = getComputerSelection();
-
-    let roundResult = playRound(playerSelection, computerSelection);
-
-    if (roundResult.search('You Win!') > -1) {
-        playerScore++;
-    } else if (roundResult.search('You Lose!') > -1) {
-        computerScore++;
-    }
-
-    scorePlayer.textContent = playerScore;
-    scoreComputer.textContent = computerScore;
-    message.textContent = roundResult;
-    selectionPlayer.appendChild(createParagWithText(playerSelection));
-    selectionComputer.appendChild(createParagWithText(computerSelection));
-
-    if (playerScore >= 5 && computerScore < 5) {
-        message.textContent = 'Game Over. You Win!';
-    } else if (playerScore < 5 && computerScore >= 5) {
-        message.textContent = 'Game Over. You Lose!';
-    }
-}
 /* Helper Functions */
 function random(number) {
     return Math.floor(Math.random() * number + 1);
 }
-
-function capitalize(string) {
-    return (
-        string.toLowerCase().charAt(0).toUpperCase() + string.toLowerCase().slice(1)
-    );
-}
-/* ************************ */
-© 2021 GitHub, Inc.

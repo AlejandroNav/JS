@@ -29,14 +29,13 @@ resetear.addEventListener('click', resetF)
 
 // ******FUNCTIONS*************************************************************
 function resetF() {
-    p1Objeto.score = p2Objeto.score = 0
-    p1Objeto.display.textContent = p1Objeto.score;
-    p2Objeto.display.textContent = p2Objeto.score;
     isTerminado = false;
-    p1Objeto.display.classList.remove('has-text-success', 'has-text-danger')
-    p2Objeto.display.classList.remove('has-text-danger', 'has-text-success')
-    p1Objeto.button.disabled = false;
-    p2Objeto.button.disabled = false;
+    for (let p of [p1Objeto, p2Objeto]) {
+        p.score = 0
+        p.display.textContent = p.score;
+        p.display.classList.remove('has-text-success', 'has-text-danger')
+        p.button.disabled = false;
+    }
 }
 function updateScore(j1, j2) {
     if (!isTerminado) {

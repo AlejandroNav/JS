@@ -37,16 +37,20 @@ body {
     height: 8px;
     position: absolute;
     top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.smol {
-    background-color: black;
+#smol-hand {
+    background-color: firebrick;
 }
 
-.medi {
-    background-color: rgb(165, 7, 7);
+#medi-hand {
+    background-color: rgb(151, 153, 52);
 }
 
-.bigs {
-    background-color: rgb(85, 53, 161);
+#bigs-hand {
+    background-color: rgb(153, 109, 255);
 }

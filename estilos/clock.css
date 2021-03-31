@@ -1,7 +1,7 @@
 :root {
-    --base: #fff;
+    --color: #fff;
     --spacing: 10px;
-    --blurry: 0px;
+    --blur: 0px;
 }
 
 html {
@@ -22,12 +22,12 @@ body {
 }
 img{
     padding: var(--spacing);
-    background: var(--base);
-    filter: blur(var(--blurry));
+    background: var(--color);
+    filter: blur(var(--blur));
 
 }
 h2{
-    color:var(--base) ;
+    color:var(--color) ;
 }
 
 .clock {

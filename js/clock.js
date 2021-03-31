@@ -5,6 +5,7 @@ const horus = document.getElementById("bigs-hand")
 
 function setDate() {
     const now = new Date;
+
     const seconds = now.getSeconds();
     const minutes = now.getMinutes();
     const hours = now.getHours();
@@ -16,3 +17,4 @@ function setDate() {
     horus.style.transform = `rotate(${bigusDeg}deg)`
 }
 setInterval(setDate, 1000)
+

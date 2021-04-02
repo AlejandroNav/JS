@@ -48,5 +48,5 @@ console.table(orden);
 
 const total = inventors.reduce((total,inventor) =>{
     return total + (inventor.dead - inventor.born)
-})
+},0);
 console.log(total);

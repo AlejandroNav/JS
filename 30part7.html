@@ -4,10 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Array Cardio 💪💪</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+
+    <canvas id="draw" width="800" height="800"></canvas>
+
+
+
     <script>
         // ## Array Cardio Day 2
         const people = [
@@ -36,22 +46,61 @@
                 console.log(curYear - person.year + ' es mayor');
             }
         })
-    // Array.prototype.every() // is everyone 19 or older?
 
-    // Array.prototype.find()
-    const com = comments.find(function (com) {
-        if (com.id === 823423) {
-            return true
+        const com = comments.find(function (com) {
+            if (com.id === 823423) {
+                return true
+            }
+        })
+        console.log(com);
+
+        const canvas = document.querySelector('#draw');
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+        
+        ctx.lineJoin= 'round'
+        ctx.lineCap= 'round'
+        let isDrawing = false;
+        let lastY = 0
+        let lastX = 0
+        let hue = 240
+        let direction = true
+        ctx.lineWidth = 99
+        function draw(e) {
+            if (!isDrawing) {
+                return
+            }
+            console.log(e);
+            ctx.beginPath();
+            ctx.moveTo(lastX,lastY);
+            ctx.lineTo(e.offsetX,e.offsetY);
+            ctx.stroke();
+            ctx.strokeStyle = `hsl(${hue},90%,60%)`;
+            
+            lastX = e.offsetX;
+            lastY = e.offsetY;
+            hue++;
+            if (hue >=350) {
+                hue=0
+            }
+            if (ctx.lineWidth >= 100 ||ctx.lineWidth <= 10 ) {
+                direction = !direction;
+            }
+            if (direction) {
+                ctx.lineWidth++
+            } else {
+                ctx.lineWidth--
+            }
         }
-    })
-    console.log(com);
-    // Find is like filter, but instead returns just the one you are looking for
-    // find the comment with the ID of 823423
-
-    // Array.prototype.findIndex()
-    // Find the comment with this ID
-    // delete the comment with the ID of 823423
-
+        canvas.addEventListener('mousemove',draw)
+        canvas.addEventListener('mousedown',(e)=> {
+            isDrawing = true
+            lastX = e.offsetX;
+            lastY = e.offsetY;
+        })
+        canvas.addEventListener('mouseup',()=> isDrawing = false)
+        canvas.addEventListener('mouseout',()=> isDrawing = false)
     </script>
 </body>
 

@@ -70,7 +70,7 @@
         </div>
         <div class="item">
             <input type="checkbox">
-            <p>Check a lower item</p>  
+            <p>Check a lower item</p>
         </div>
         <div class="item">
             <input type="checkbox">
@@ -94,7 +94,32 @@
         </div>
     </div>
 
+
     <script>
+        const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]')
+        let lastCheck;
+
+        function handleCheck(e) {
+            let inBetween = false;
+            if (e.shiftKey && this.checked) {
+                checkboxes.forEach(checkbox =>{
+                    console.log(checkbox);
+                    if (checkbox === this || checkbox === lastCheck) {
+                        inBetween =!inBetween
+                    }
+                })
+            }
+            lastCheck = this;
+        }
+        checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+
+
+
+
+
+
+
+
     </script>
 </body>
 

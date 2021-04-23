@@ -18,9 +18,13 @@ figgy('Hello World!!', function (err, data) {
 
 
 const franc = require("franc")
-
 const langs = require("langs")
 
-const langCode = franc("Alle menslike wesens word vry")
 
-console.log(langs.where("3","kor").name);
+const input = process.argv[2];
+const langCode = franc(input)
+
+if (langCode ==='und') {
+    console.log('Sorry it doenst work');
+}
+else console.log(langs.where("3",langCode).name.red);

@@ -6,14 +6,6 @@ joke.getRandomDadJoke(function (joke) {
     console.dir(joke);
 });
 
-// To get a customized joke
-var fn = "Jackie";
-var ln = "Chan";
-joke.getCustomJoke(fn, ln, function (joke) {
-
-    console.log(joke.trap);
-});
-
 
 figgy('Hello World!!', function (err, data) {
     if (err) {
@@ -23,3 +15,12 @@ figgy('Hello World!!', function (err, data) {
     }
     console.log(data.rainbow)
 });
+
+
+const franc = require("franc")
+
+const langs = require("langs")
+
+const langCode = franc("Alle menslike wesens word vry")
+
+console.log(langs.where("3","kor").name);
